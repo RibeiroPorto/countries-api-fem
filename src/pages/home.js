@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import Card from '../components/countryCard';
+import CardsPanel from '../components/cardsPainel';
 
 function Home() {
     
@@ -7,7 +7,7 @@ function Home() {
     <div className="Main">
       
       <Link to='/countries/10'>country</Link>
-     <Card></Card>
+     <CardsPanel></CardsPanel>
 
     </div>
   );

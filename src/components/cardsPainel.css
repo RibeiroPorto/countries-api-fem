@@ -1,0 +1,12 @@
+.cardsContainer{
+    background-color: red;
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+.cardsContainer>div:last-child{
+    padding: 0 50px;
+}
