@@ -37,6 +37,8 @@ function CardsPanel() {
                         Object.values(data).map((element, index) => {
                             let name = element.name.common
                             let population = element.population
+                            let formatForPopulation = new Intl.NumberFormat('de-DE')
+                            let formatedPopulation = formatForPopulation.format(population)
                             let region = element.region
                             let captal = element.capital
                             let flag = element.flags
@@ -47,7 +49,7 @@ function CardsPanel() {
                                     flag={flag.png}
                                     flagAlt={flag.alt}
                                     name={name}
-                                    population={population}
+                                    population={formatedPopulation}
                                     region={region}
                                     captal={captal}
                                 >

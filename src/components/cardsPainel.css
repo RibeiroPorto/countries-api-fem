@@ -1,12 +1,13 @@
 .cardsContainer{
-    background-color: red;
     width: 100%;
     
     display: flex;
     flex-direction: column;
+    background-color:  rgb(250, 250, 250);
     
     
 }
 .cardsContainer>div:last-child{
-    padding: 0 50px;
+    display: flex;
+    flex-wrap: wrap;
 }
