@@ -1,3 +1,7 @@
+a{
+    text-decoration: none;
+    color: black;
+}
 .card img {
     width: 280px;
     height: 180px;
@@ -40,3 +44,13 @@
 .region {}
 
 .captal {}
+
+
+/* Dark mode */
+
+.dark .card {
+    background-color: rgb(43, 55, 67);
+    color: white;
+    
+
+}

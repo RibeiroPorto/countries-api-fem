@@ -54,10 +54,25 @@ div.search{
 
     box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
     padding: 0 0 0 20px ;
-    border-radius: 0;
+    border-radius: 4px;
 }
 .search .region-filter::after{
     border-radius: 0;
-    background-color: red;
-    overflow: ;
+    
+}
+
+/* Dark Mode */
+
+.dark .search .searchbar{
+    background-color: rgb(43, 55, 67);
+    color: rgb(250, 249, 250);
+}
+.dark .search .input-container::before{
+    
+    background-image: url('./media/magnifying-glass-svgrepo-com-2.svg');
+}
+
+.dark .search .region-filter{
+    background-color: rgb(43, 55, 67);
+    color: rgb(217, 216, 218);
 }

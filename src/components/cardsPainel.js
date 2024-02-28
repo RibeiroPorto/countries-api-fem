@@ -6,6 +6,9 @@ import Card from './cards';
 function CardsPanel() {
     const [data, setData] = useState(null)
     const [loading, setloading] = useState(true)
+    const [filteredRegion, setFilterRegion]=useState(null)
+    
+    const [filteredCountry, setFilterCountry]=useState(null)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -21,7 +24,18 @@ function CardsPanel() {
         }
         fetchData()
     }, [])
-
+    
+    function filterRegion( region){
+        if(region==='Filter by Region'){
+            setFilterRegion(null)
+        }else{
+        setFilterRegion(region)
+        }
+    }
+    function SearchForaCountry( name){
+        console.log(name)
+        setFilterCountry(name)
+    }
     if (loading) {
         return <p>loading</p>
     } else {
@@ -31,7 +45,7 @@ function CardsPanel() {
 
         return (
             <div className='cardsContainer'>
-                <SearchBar></SearchBar>
+                <SearchBar funcRegion={filterRegion} funcName={SearchForaCountry}></SearchBar>
                 <div>
                     {
                         Object.values(data).map((element, index) => {
@@ -42,7 +56,23 @@ function CardsPanel() {
                             let region = element.region
                             let captal = element.capital
                             let flag = element.flags
-
+                        
+                            let nativeName = element.name.nativeName
+                            let subRegion =element.subregion
+                            let domain = element.tld
+                            let currencie = element.currencies
+                            let languages = element.languages
+                            let BorderCountries=''
+                            if(filteredRegion !== null){
+                                if(region !== filteredRegion){
+                                    return <></>
+                                }
+                            }
+                            if(filteredCountry !== null){
+                                if( !name.includes(filteredCountry)){
+                                    return <></>
+                                }
+                            }
                             return (
                                 <Card
                                     key={index}
@@ -52,6 +82,7 @@ function CardsPanel() {
                                     population={formatedPopulation}
                                     region={region}
                                     captal={captal}
+                                    link={"/countries/"+name}
                                 >
 
                                 </Card>

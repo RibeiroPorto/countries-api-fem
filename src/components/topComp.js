@@ -1,16 +1,19 @@
 import './topComponent.css'
 
+function TopSection({func}) {
+    
 
-function TopSection() {
-
-    return (<div>
+    return (<div className='top-component'>
         <p>Where in The World ?</p>
-        <i class="far fa-moon"></i>
-        <label class="switch">
-            <input type="checkbox"></input>
-            
-                <span class="slider round"></span>
-        </label>
+
+        <button onClick={func} className='DarkMode_Button'>
+            <i className="far fa-moon white"></i>
+            <i className="fas fa-moon dark"></i>
+
+            <p> Dark mode</p>
+        </button>
+
+
     </div>)
 }
 export default TopSection

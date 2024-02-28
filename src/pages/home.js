@@ -5,8 +5,8 @@ function Home() {
     
   return (
     <div className="Main">
-      
-      <Link to='/countries/10'>country</Link>
+{/*       
+      <Link to='/countries/10'>country</Link> */}
      <CardsPanel></CardsPanel>
 
     </div>
