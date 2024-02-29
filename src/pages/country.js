@@ -1,24 +1,30 @@
 import React from "react";
-
-import { useParams } from "react-router-dom";
+import BigCardPanel from "../components/bigCardPainel";
+import { json, useParams } from "react-router-dom";
 
 import { useEffect, useState } from 'react';
 
 function Country() {
-
-  const [data, setData] = useState(null)
-  const [loading, setloading] = useState(true)
-  
   let { country } = useParams();
-  console.log(data)
-  function show(){
-    console.log('a')
-  }
+  const [countrydata, setcountrydata] = useState(null)
+
+  useEffect(()=>{
+    fetch(`https://restcountries.com/v3.1/name/${country}`).then((response) => {
+      console.log(response)
+      return response.json()
+    }).then((data)=>{
+      console.log(data)
+      setcountrydata(data)
+    }).then(()=>{
+      return(<p>{countrydata[0].name.common}</p>)
+    })
+  },[]);
+
   return(
-    <>
-    <p>{country}</p>
-    <button onClick={show}>asdf</button>
-    </>
+    <div>
+      <p>{country}</p>
+      
+    </div>
   )
 }
 

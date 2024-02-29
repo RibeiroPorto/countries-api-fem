@@ -57,12 +57,6 @@ function CardsPanel() {
                             let captal = element.capital
                             let flag = element.flags
                         
-                            let nativeName = element.name.nativeName
-                            let subRegion =element.subregion
-                            let domain = element.tld
-                            let currencie = element.currencies
-                            let languages = element.languages
-                            let BorderCountries=''
                             if(filteredRegion !== null){
                                 if(region !== filteredRegion){
                                     return <></>
