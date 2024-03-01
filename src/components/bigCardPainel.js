@@ -1,10 +1,11 @@
-
+import './bigCardCountry.css'
 
 function BigCardPanel({flag, flagAlt,name, nativeName, population, region, subRegion,captal,domain,currencies, languages, borderCountries }){
 
     return (
         <div className="bigCard">
-            <img scr={flag} alt={flagAlt}></img>
+            <a className="BackButton" href='/'><i class="fas fa-arrow-left"></i> Back</a>
+            <img src={flag} alt={flagAlt}></img>
             <div className="countryInfo">
                 <h1>{name}</h1>
                 <div>
@@ -18,8 +19,10 @@ function BigCardPanel({flag, flagAlt,name, nativeName, population, region, subRe
                     <p><span>Languages: </span>{languages }</p>
                 </div>
                 <div>
-                    <p>Border Countries</p>
-                    {borderCountries }
+                    <p>Border Countries :</p>
+                    {borderCountries.map((country,index)=>{
+                        return <a href={"/countries/"+country}>{country}</a>
+                    } )}
                 </div>
             </div>
 

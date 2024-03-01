@@ -1,0 +1,112 @@
+.bigCard {
+
+    margin-top: -10px;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    height: 100vh;
+}
+
+.BackButton {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid black;
+    margin-top: 55px;
+    margin-left: 55px;
+    padding: 5px 25px;
+}
+
+.bigCard img {
+    /* margin-top: 70px; */
+    width: 40%;
+    height: auto;
+
+}
+
+.bigCard .countryInfo {
+
+    /* margin-top: 70px; */
+    width: 40%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.countryInfo>* {
+    width: 100%;
+}
+
+.countryInfo h1 {
+    text-align: left;
+
+}
+
+.countryInfo>div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    max-height: 40%;
+    margin-top: 30px;
+}
+
+.countryInfo>div:nth-child(2) p {
+    margin-bottom: 10px;
+    font-size: .85em;
+}
+
+.countryInfo>div:nth-child(2) p span {
+    font-weight: bold;
+
+}
+
+.countryInfo>div:last-child {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 50px;
+
+}
+
+.countryInfo>div:last-child>p {
+    margin: 0 20px 0 0;
+}
+
+.countryInfo>div:last-child>a {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 3px 10px;
+    margin-right: 8px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Dark mode */
+
+.dark .bigCard {
+
+    background-color: rgb(32, 45, 54);
+}
+
+.dark .bigCard .countryInfo {
+    color: white;
+
+}
+
+.dark .countryInfo>div:last-child>a {
+    color: white;
+
+    background-color: rgb(43, 55, 67);
+}
+
+.dark .BackButton {
+    color: white;
+
+    background-color: rgb(43, 55, 67);
+}
