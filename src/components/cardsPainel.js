@@ -39,7 +39,7 @@ function CardsPanel() {
     if (loading) {
         return <p>loading</p>
     } else {
-
+        console.log(data)
 
 
 
@@ -56,7 +56,7 @@ function CardsPanel() {
                             let region = element.region
                             let captal = element.capital
                             let flag = element.flags
-                        
+                            let maps =element.maps.openStreetMaps
                             if(filteredRegion !== null){
                                 if(region !== filteredRegion){
                                     return <></>
@@ -77,6 +77,7 @@ function CardsPanel() {
                                     region={region}
                                     captal={captal}
                                     link={"/countries/"+name}
+                                    maps={maps}
                                 >
 
                                 </Card>

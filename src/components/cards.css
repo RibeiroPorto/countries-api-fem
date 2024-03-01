@@ -39,12 +39,9 @@ a{
     font-size: 1.5em;
 }
 
-.population {}
-
-.region {}
-
-.captal {}
-
+.map{
+    border:0;
+}
 
 /* Dark mode */
 
