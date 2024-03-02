@@ -37,7 +37,12 @@ function Country() {
 
   }, [country])
   if (loading) {
-    return <div>Loading...</div>;
+    return (<div>
+      <BigCardPanel
+        borderCountries={[]}
+      ></BigCardPanel>
+    </div>);
+
   } else if (countrydata) {
     console.log(borderCountries)
     let flag = countrydata.flags.png

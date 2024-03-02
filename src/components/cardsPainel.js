@@ -6,9 +6,9 @@ import Card from './cards';
 function CardsPanel() {
     const [data, setData] = useState(null)
     const [loading, setloading] = useState(true)
-    const [filteredRegion, setFilterRegion]=useState(null)
-    
-    const [filteredCountry, setFilterCountry]=useState(null)
+    const [filteredRegion, setFilterRegion] = useState(null)
+
+    const [filteredCountry, setFilterCountry] = useState(null)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -24,22 +24,39 @@ function CardsPanel() {
         }
         fetchData()
     }, [])
-    
-    function filterRegion( region){
-        if(region==='Filter by Region'){
+
+    function filterRegion(region) {
+        if (region === 'Filter by Region') {
             setFilterRegion(null)
-        }else{
-        setFilterRegion(region)
+        } else {
+            setFilterRegion(region)
         }
     }
-    function SearchForaCountry( name){
-        console.log(name)
+    function SearchForaCountry(name) {
+    
         setFilterCountry(name)
     }
     if (loading) {
-        return <p>loading</p>
+        return (<div className='cardsContainer'>
+            <SearchBar funcRegion={filterRegion} funcName={SearchForaCountry}></SearchBar>
+            <div>
+                {
+                [...Array(30).keys()].map((item)=>{
+                    return (
+                        <Card
+                            key={item}
+                            
+                        >
+
+                        </Card>
+                    )
+                })
+                }
+            </div>
+        </div>
+
+        )
     } else {
-        console.log(data)
 
 
 
@@ -56,14 +73,13 @@ function CardsPanel() {
                             let region = element.region
                             let captal = element.capital
                             let flag = element.flags
-                            let maps =element.maps.openStreetMaps
-                            if(filteredRegion !== null){
-                                if(region !== filteredRegion){
+                            if (filteredRegion !== null) {
+                                if (region !== filteredRegion) {
                                     return <></>
                                 }
                             }
-                            if(filteredCountry !== null){
-                                if( !name.includes(filteredCountry)){
+                            if (filteredCountry !== null) {
+                                if (!name.includes(filteredCountry)) {
                                     return <></>
                                 }
                             }
@@ -76,8 +92,7 @@ function CardsPanel() {
                                     population={formatedPopulation}
                                     region={region}
                                     captal={captal}
-                                    link={"/countries/"+name}
-                                    maps={maps}
+                                    link={"/countries/" + name}
                                 >
 
                                 </Card>

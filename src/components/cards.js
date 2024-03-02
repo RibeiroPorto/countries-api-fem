@@ -1,6 +1,6 @@
 import './cards.css'
 
-function Card({link, flag, flagAlt, name, population, region, captal,map }) {
+function Card({link, flag, flagAlt, name, population, region, captal }) {
 
 
     return (
@@ -18,10 +18,6 @@ function Card({link, flag, flagAlt, name, population, region, captal,map }) {
 
             </div>
             </a>
-            <div className='map'>
-                <p>{map}</p>
-            <iframe src={map} width="400" height="350"  allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
-            </div>
         </div>
         
     )

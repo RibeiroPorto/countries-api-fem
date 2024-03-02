@@ -3,6 +3,7 @@
     
     display: flex;
     flex-direction: column;
+    
     background-color:  rgb(250, 250, 250);
     min-height: 100vh;
     
@@ -10,10 +11,16 @@
 .cardsContainer>div:last-child{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 /* Dark Mode */
 
 .dark .cardsContainer{
     background-color: rgb(32, 45, 54);
+
+}
+@media (max-width:1025px){
+    
+
 }

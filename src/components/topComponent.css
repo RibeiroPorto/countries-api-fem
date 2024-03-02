@@ -3,7 +3,7 @@
   justify-content: space-between;
   padding: 20px 80px  ;
   align-items: center;
-  
+  border-bottom: 1px solid rgba(0, 0, 0, 0.16);
 }
 .top-component>p{
   font-weight: bold;
@@ -42,3 +42,12 @@
   display: none;
 }
 
+
+@media (max-width:426px){
+  .top-component{
+    padding: 20px 10px;
+  }
+  .top-component p{
+    font-size: 1.2em;
+  }
+}

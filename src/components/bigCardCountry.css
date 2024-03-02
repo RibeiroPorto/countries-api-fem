@@ -6,24 +6,29 @@
     align-items: center;
     justify-content: space-evenly;
     position: relative;
-    border-top: 1px solid rgba(0, 0, 0, 0.06);
-    height: 100vh;
+
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .BackButton {
     position: absolute;
     top: 0;
     left: 0;
-    border: 1px solid black;
+    border-radius: 3px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.144);
     margin-top: 55px;
     margin-left: 55px;
     padding: 5px 25px;
+    background-color: white;
 }
 
 .bigCard img {
     /* margin-top: 70px; */
     width: 40%;
-    height: auto;
+    min-height: 300px;
+    background-color: white;
 
 }
 
@@ -69,21 +74,23 @@
 .countryInfo>div:last-child {
     width: 100%;
     display: flex;
-    align-items: center;
+    align-items:center;
     justify-content: flex-start;
     margin-top: 50px;
+    flex-wrap: wrap;
 
 }
 
 .countryInfo>div:last-child>p {
-    margin: 0 20px 0 0;
+    margin: 0 20px 20px 0;
+    
 }
 
 .countryInfo>div:last-child>a {
     border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 3px 10px;
-    margin-right: 8px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    margin: 0 8px 20px 0;
 }
 
 
@@ -109,4 +116,90 @@
     color: white;
 
     background-color: rgb(43, 55, 67);
+}
+
+@media (max-width:1025px) {
+    .bigCard {
+
+        padding: 0px;
+    }
+
+    .bigCard .countryInfo {}
+
+    .countryInfo>div:nth-child(2) {
+        max-height: 70%;
+        margin-top: 30px;
+    }
+
+    .countryInfo>div:last-child {
+        flex-wrap: wrap;
+    }
+
+}
+
+@media (max-width:769px) {
+    .bigCard {
+        flex-direction: column;
+    }
+    .BackButton{
+        top: -15px;
+
+    }
+
+    .bigCard img {
+        width: 70%;
+        padding: 50px;
+        margin-top: 30px;
+    }
+    .bigCard .countryInfo{
+        width: 70%;
+    }
+    .countryInfo>div:nth-child(2) {
+        
+        margin-top: 30px;
+        height: 140px;
+        justify-content: center;
+    }
+    
+    .countryInfo>div:last-child {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width:426px) {
+    .bigCard {
+        flex-direction: column;
+    }
+    .BackButton{
+        top: -25px;
+        left: -35px;
+    }
+
+    .bigCard img {
+        width: 100%;
+        padding: 50px 20px;
+        margin-top: 30px;
+    }
+    .bigCard .countryInfo{
+        width: 85%;
+        margin: 0;
+    }
+    .countryInfo>div:nth-child(2) {
+        flex-wrap: nowrap;
+        margin-top: 30px;
+        height: 200px;
+        justify-content: center;
+        
+    }
+    
+    .countryInfo>div:last-child {
+        margin-top:20px;
+        margin-bottom: 30px;
+    }
+    
+    .countryInfo>div:last-child p{
+        width: 100%;
+        text-align: left;
+        margin-bottom: 5px;
+    }
 }
