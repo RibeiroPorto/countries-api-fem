@@ -55,6 +55,6 @@ It was a wonderful experience to develop this system, I was able to learn a ton 
 
 ## Author
 
-- Website - [Vinicius Ribeiro](https://portifolio-f-e.vercel.app/)
+- Website - [Vinicius Ribeiro](https://mydevportifolio.vercel.app/)
 - Frontend Mentor - [@RibeiroPorto](https://www.frontendmentor.io/profile/RibeiroPorto)
 
